@@ -105,8 +105,8 @@ describe('session persistence', () => {
   });
 
   it('ignores corrupted saves', () => {
-    localStorage.setItem('wordweave:current', '{"status":"playing","puzzle":{"letters":[]}}');
-    localStorage.setItem('wordweave:stats', 'not json');
+    localStorage.setItem('links:current', '{"status":"playing","puzzle":{"letters":[]}}');
+    localStorage.setItem('links:stats', 'not json');
     const { game, stats } = bootstrap();
     expect(game.puzzle.letters).toHaveLength(48);
     expect(stats.gamesPlayed).toBe(1);

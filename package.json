@@ -1,5 +1,5 @@
 {
-  "name": "wordweave",
+  "name": "links",
   "private": true,
   "version": "1.0.0",
   "description": "A polished, unlimited, Strands-inspired themed word-search game built with React and TypeScript.",

@@ -1,4 +1,6 @@
-# Wordweave
+# Links
+
+### [▶ Play Links](https://callumtsungu200-coder.github.io/links/)
 
 An unlimited, themed word-search game inspired by the *Strands* format, built with **React** and **TypeScript**.
 Each round gives you a theme and a 6 × 8 grid of letters. Find every theme word, plus the **spangram**: a word or
@@ -157,6 +159,15 @@ There are 83 tests (Vitest + Testing Library + jsdom). They cover:
 
 ## Deployment
 
+### GitHub Pages (live site)
+
+The game is published at **https://callumtsungu200-coder.github.io/links/**. The workflow in
+`.github/workflows/pages.yml` runs the tests, builds the site and deploys it on every push to `main`. The build uses
+relative asset paths (`base: './'` in `vite.config.ts`), so the same output works at a sub-path like `/links/` and at
+the root of a domain.
+
+To publish your own copy, open **Settings → Pages** in your fork, set **Source** to **GitHub Actions**, then push.
+
 ### Netlify
 
 The repository includes `netlify.toml`, so no setup is needed:
@@ -179,7 +190,7 @@ git init
 git add .
 git commit -m "Initial commit"
 git branch -M main
-git remote add origin https://github.com/<you>/wordweave.git
+git remote add origin https://github.com/<you>/links.git
 git push -u origin main
 ```
 
@@ -190,14 +201,14 @@ A GitHub Actions workflow (`.github/workflows/ci.yml`) runs the tests and the pr
 
 ## Data and privacy
 
-Everything stays in your browser's `localStorage` under keys starting with `wordweave:`:
+Everything stays in your browser's `localStorage` under keys starting with `links:`:
 
 | Key                 | Contents                                    |
 | ------------------- | ------------------------------------------- |
-| `wordweave:stats`   | Statistics                                  |
-| `wordweave:current` | The game in progress (so reloads resume it) |
-| `wordweave:recent`  | Recently played puzzle IDs                  |
-| `wordweave:prefs`   | Colour scheme and whether help was seen     |
+| `links:stats`   | Statistics                                  |
+| `links:current` | The game in progress (so reloads resume it) |
+| `links:recent`  | Recently played puzzle IDs                  |
+| `links:prefs`   | Colour scheme and whether help was seen     |
 
 There are no network requests, analytics or cookies. You can clear statistics from the Statistics dialog.
 
@@ -205,7 +216,7 @@ There are no network requests, analytics or cookies. You can clear statistics fr
 
 ## Credits and licence
 
-Wordweave is an original, independent project. It is inspired by the themed word-search format but is not affiliated
+Links is an original, independent project. It is inspired by the themed word-search format but is not affiliated
 with, or endorsed by, any other publisher. All puzzles, code and visuals are original.
 
 Released under the [MIT License](LICENSE).

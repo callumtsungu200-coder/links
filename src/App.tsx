@@ -124,7 +124,7 @@ export default function App({ initialGame, initialStats }: AppProps) {
       <header className="topbar">
         <div className="brand">
           <span className="brand-mark" aria-hidden="true" />
-          <h1>Wordweave</h1>
+          <h1>Links</h1>
         </div>
         <nav className="topbar-actions" aria-label="Game menu">
           <button className="icon-button" onClick={() => setDialog('help')} aria-label="How to play">

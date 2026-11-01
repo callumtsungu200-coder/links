@@ -146,7 +146,7 @@ describe('<Grid /> selection mechanics', () => {
 describe('<App /> full game', () => {
   beforeEach(() => {
     localStorage.clear();
-    localStorage.setItem('wordweave:prefs', JSON.stringify({ seenHelp: true }));
+    localStorage.setItem('links:prefs', JSON.stringify({ seenHelp: true }));
     vi.useFakeTimers();
   });
   afterEach(() => vi.useRealTimers());
@@ -170,13 +170,13 @@ describe('<App /> full game', () => {
     expect(within(dialog).getByText('Puzzle complete!')).toBeTruthy();
     expect(within(dialog).getByText(puzzle.words.find((w) => w.isSpangram)!.word)).toBeTruthy();
 
-    const stats = JSON.parse(localStorage.getItem('wordweave:stats')!);
+    const stats = JSON.parse(localStorage.getItem('links:stats')!);
     expect(stats).toMatchObject({ gamesCompleted: 1, wordsFound: total, currentStreak: 1, longestStreak: 1 });
 
     fireEvent.click(within(dialog).getByRole('button', { name: /next puzzle/i }));
     expect(screen.queryByRole('dialog')).toBeNull();
     expect(screen.getByText(/theme words found/).textContent).toContain('0 of');
-    expect(JSON.parse(localStorage.getItem('wordweave:stats')!).gamesPlayed).toBe(2);
+    expect(JSON.parse(localStorage.getItem('links:stats')!).gamesPlayed).toBe(2);
   });
 
   it('keeps every find when several words are submitted before React re-renders', () => {
@@ -193,11 +193,11 @@ describe('<App /> full game', () => {
     fireEvent.click(screen.getByRole('button', { name: /^hint$/i }));
     expect(document.querySelectorAll('.cell.is-hinted').length).toBeGreaterThan(0);
     fireEvent.click(screen.getByRole('button', { name: /show order/i }));
-    expect(JSON.parse(localStorage.getItem('wordweave:stats')!).hintsUsed).toBe(2);
+    expect(JSON.parse(localStorage.getItem('links:stats')!).hintsUsed).toBe(2);
 
     fireEvent.click(screen.getByRole('button', { name: /new puzzle/i }));
     fireEvent.click(within(screen.getByRole('dialog')).getByRole('button', { name: /skip puzzle/i }));
-    const stats = JSON.parse(localStorage.getItem('wordweave:stats')!);
+    const stats = JSON.parse(localStorage.getItem('links:stats')!);
     expect(stats).toMatchObject({ currentStreak: 0, longestStreak: 3, gamesPlayed: 2 });
   });
 });

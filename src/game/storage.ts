@@ -1,6 +1,6 @@
 /** Namespaced, failure-tolerant localStorage helpers (private mode, quota, SSR). */
 
-const PREFIX = 'wordweave:';
+const PREFIX = 'links:';
 
 export function load<T>(key: string, fallback: T): T {
   try {

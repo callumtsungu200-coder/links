@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="description" content="Wordweave — an unlimited themed word-search game. Find the hidden theme words and the spangram." />
+    <meta name="description" content="Links — an unlimited themed word-search game. Find the hidden theme words and the spangram." />
     <meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#121316" media="(prefers-color-scheme: dark)" />
-    <title>Wordweave</title>
+    <title>Links</title>
     <script>
       // Apply the saved colour scheme before first paint to avoid a flash.
       try {
-        var p = JSON.parse(localStorage.getItem('wordweave:prefs') || '{}');
+        var p = JSON.parse(localStorage.getItem('links:prefs') || '{}');
         var t = p.theme === 'dark' || p.theme === 'light' ? p.theme
           : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         document.documentElement.dataset.theme = t;
