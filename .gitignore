@@ -1,0 +1,11 @@
+node_modules
+dist
+*.local
+.DS_Store
+coverage
+*.log
+.vscode/*
+!.vscode/extensions.json
+.idea
+.netlify
+.claude/
